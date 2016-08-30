@@ -65,7 +65,7 @@ work_flow.state == :two
 
 ### Check first and last
 
-`first?` and `last?` methods can be used to check if that is at the beginning or
+`first?` and `last?` methods can be used to check if the work flow is at the beginning or
 end of the defined states.
 
 ```ruby
@@ -85,7 +85,7 @@ work_flow.state == last_state == :four
 work_flow.last? == true
 ```
 
-### Check where a state can be changed
+### Check whether a state can be changed
 
 Use the `can?` method to check whether a work flow can be move forward or back.
 
