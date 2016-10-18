@@ -25,11 +25,13 @@ module LinearWorkFlow
     def forward!
       raise(ChangeStateError, "Cannot go forward from last state") if last?
       self.index += 1
+      state
     end
 
     def back!
       raise(ChangeStateError, "Cannot go back from first state") if first?
       self.index -= 1
+      state
     end
 
     def last?

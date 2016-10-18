@@ -22,7 +22,7 @@ module LinearWorkFlow
     end
 
     def test_forward
-      work_flow.forward!
+      assert_equal states[1], work_flow.forward!
       assert_equal states[1], work_flow.state
     end
 
@@ -35,7 +35,7 @@ module LinearWorkFlow
 
     def test_back
       work_flow states.last
-      work_flow.back!
+      assert_equal states[-2], work_flow.back!
       assert_equal states[-2], work_flow.state
     end
 
