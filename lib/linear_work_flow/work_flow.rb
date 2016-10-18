@@ -40,6 +40,22 @@ module LinearWorkFlow
       index == 0
     end
 
+    def permissible_states
+      []
+    end
+
+    def forward_state
+      states[index + 1] unless last?
+    end
+
+    def back_state
+      states[index - 1] unless first?
+    end
+
+    def permissible_states
+      [back_state, state, forward_state].compact
+    end
+
     def can?(action)
       !!restore_after do
         begin
